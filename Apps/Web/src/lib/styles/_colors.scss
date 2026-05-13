@@ -1,0 +1,134 @@
+// Color Variables
+$color-black: #000000;
+$color-charcoal: #333333;
+$color-dark-bg: #1A1A1A;
+$color-white: #ffffff;
+$color-primary: #0D95FF;
+$color-secondary: #FF0D5A;
+$color-mid: #8651AC;
+$color-discord:#FB00CD;
+$color-gray:#808089;
+$color-gray2:#808080;
+$color-green:#00FB54;
+$color-purple:#7F06F9;
+$color-charcoal-white:#dcdcdc;
+$color-blue:#0D95FF;
+$color-green-light:#4FF21D;
+$color-yellow:#F2E81D;
+$color-gold:#FFD700;
+
+// Background Classes
+.bg-black { background-color: $color-black; }
+.bg-charcoal { background-color: $color-charcoal; }
+.bg-dark { background-color: $color-dark-bg; }
+.bg-white { background-color: $color-white; }
+.bg-primary { background-color: $color-primary; }
+.bg-secondary { background-color: $color-secondary; }
+.bg-mid { background-color: $color-mid; }
+.bg-discord{background-color: $color-discord;}
+.bg-purple{background-color: $color-purple;}
+.bg-dark-bg{background-color: $color-dark-bg;}
+.bg_grd_one{
+    background: linear-gradient(to right, $color-primary 0%, $color-discord 100%);
+    
+    &:hover{
+
+         background: linear-gradient(to right, $color-discord 0%, $color-primary 100%);
+
+    }
+}
+
+// Text Color Classes
+.text-black { color: $color-black; }
+.text-charcoal { color: $color-charcoal; }
+.text-dark { color: $color-dark-bg; }
+.text-white { color: $color-white; }
+.text-gray{color: $color-gray;}
+.text-primary { color: $color-primary; &:hover{
+     background: linear-gradient(to right, $color-primary 0%, $color-discord 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+} }
+.text-secondary { color: $color-secondary; }
+.text-mid { color: $color-mid; }
+.text-discord{color: $color-discord}
+.text-purple{color: $color-purple}
+.text-charcoal-white{color: $color-charcoal-white;}
+.text-blue{color: $color-blue;}
+.text-green{color: $color-green;}
+.text-green-light{color: $color-green-light;}
+.text-yellow{color: $color-yellow;}
+.text-gold{color:$color-gold;}
+
+// Border Classes
+.border-black { border-color: $color-black; }
+.border-charcoal { border-color: $color-charcoal; }
+.border-dark { border-color: $color-dark-bg; }
+.border-white { border-color: $color-white; }
+.border-primary { border-color: $color-primary; }
+.border-secondary { border-color: $color-secondary; }
+.border-mid { border-color: $color-mid; }
+
+//gradients
+
+.grd_one{
+    background: linear-gradient(to right, $color-primary 0%, $color-discord 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &:hover{
+         background: linear-gradient(to right, $color-discord 0%, $color-primary 100%);
+         -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+    }
+}
+
+.grd_two{
+    background: linear-gradient(to right, $color-primary 65%, $color-discord 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &:hover{
+         background: linear-gradient(to right, $color-discord 65%, $color-primary 100%);
+         -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+    }
+}
+
+.grd_three{
+    background: linear-gradient(to right, $color-primary 50%, $color-secondary 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    
+    &:hover{
+         background: linear-gradient(to right, $color-secondary 50%, $color-primary 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    }
+
+    
+}
+
+// hovers
+.hover-white:hover { color: $color-white; }
+.hover-primary-shadow:hover {
+    background: none;
+    outline: none;
+    text-decoration: none;
+    box-shadow: 0 0 20px 0 $color-primary;
+}
+
+// .hover-primary-shadow:hover { text-shadow: 2px 2px 5px $color-primary; }

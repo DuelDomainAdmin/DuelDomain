@@ -1,0 +1,160 @@
+
+@use "./fonts";
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./typography" as *;
+
+button{
+    cursor: pointer;
+}
+.btn-primary{
+
+    outline: none;
+    border:none;
+    background-color: $color-primary;
+    color:$color-white;
+    cursor: pointer;
+
+    &:hover{
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-discord 100%);
+    -webkit-background-clip:border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color:$color-white;
+    color: $color-white;
+    }
+
+    
+}
+
+.btn-primary--rounded {
+    @extend .btn-primary;
+    border-radius: 20px;
+}
+
+.btn-secondary{
+
+     background: linear-gradient(to bottom, $color-primary 0%,  $color-discord 100%);
+     color: $color-white;
+     outline: none;
+
+     
+
+
+}
+
+.btn-secondary--rounded {
+    @extend .btn-secondary;
+    border-radius: 20px;
+}
+
+.btn-purple{
+
+    outline: none;
+    border:none;
+    background-color: $color-purple;
+    color:$color-white;
+    cursor: pointer;
+
+    &:hover{
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-discord 100%);
+    -webkit-background-clip:border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color:$color-white;
+    color: $color-white;
+    }
+
+    
+}
+
+.btn-primary_grd-one{
+
+  
+
+     background: linear-gradient(to right, $color-discord 0%,  $color-primary 100%);
+     color: $color-white;
+     outline: none;
+
+     &:hover{
+
+      background: linear-gradient(to right, $color-primary 0%,  $color-discord 100%);
+     color: $color-white;
+     outline: none;
+
+     }
+
+     
+
+
+}
+
+.btn-primary_grd-two{
+
+     background: linear-gradient(to right, $color-primary 0%,  $color-discord 100%);
+     color: $color-white;
+     outline: none;
+
+     &:hover{
+
+         background: linear-gradient(to right, $color-discord 0%,  $color-primary 100%);
+     color: $color-white;
+     outline: none;
+
+     }
+
+     
+
+
+}
+
+.round-btn{
+     border-radius: 20px;
+}
+
+.tournament-register-btn{
+    background: $color-purple;
+    color: $color-white;
+
+    &--closed{
+        background-color: $color-gray2;
+        color: $color-white;
+        pointer-events: none;
+    }
+}
+
+.btn-discord{
+
+    outline: none;
+    border:none;
+    background-color: $color-discord;
+    color:$color-white;
+    cursor: pointer;
+
+    &:hover{
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-discord 100%);
+    -webkit-background-clip:border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color:$color-white;
+    color: $color-white;
+    }
+
+    
+}
+
+.btn-white{
+
+    outline: none;
+    border:none;
+    background-color: $color-white;
+    color:$color-purple;
+    cursor: pointer;
+
+    &:hover{
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-discord 100%);
+    -webkit-background-clip:border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color:$color-white;
+    color: $color-white;
+    }
+
+    
+}
