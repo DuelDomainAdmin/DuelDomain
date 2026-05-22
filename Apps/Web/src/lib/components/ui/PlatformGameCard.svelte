@@ -6,7 +6,6 @@
   export let category: string;
   export let tag_color: string;
   export let title: string;
-  export let active: boolean = false;
 </script>
 
 {#if link}

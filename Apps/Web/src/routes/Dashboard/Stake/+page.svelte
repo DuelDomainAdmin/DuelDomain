@@ -240,7 +240,7 @@
                     category={g.category}
                     tag_color={g.tag_color}
                     title={g.title}
-                    active={selectedGame === g.title}
+                  
                   />
                 </div>
               {/each}
