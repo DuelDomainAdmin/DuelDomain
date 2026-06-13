@@ -10,6 +10,7 @@
   import dash_mk from "$lib/assets/dash_mk.jpg";
   import * as Select from "$lib/components/ui/select/index.js";
   import MatchCard from '$lib/components/ui/MatchCard.svelte';
+  
 
   const games = [
     { value: "Call of duty", label: "Call of duty" },
@@ -119,7 +120,7 @@
 
       <div class="main w-full mt-4  dashboard-aside--main">
 
-        <div class="flex flex-row items-center justify-between flex-wrap">
+         <div class="flex flex-row items-center justify-between flex-wrap">
 
             <div>
 
@@ -129,7 +130,7 @@
                 </h1>
 
                 <p class="text-xs text-charcoal-white" >
-                     Ongoing Pvp Matches
+                   Ongoing PVP Matches
                 </p>
 
             </div>
@@ -137,7 +138,14 @@
            
 
 
-            
+            <div class="flex flex-row flex-wrap gap-2 items-center mt-1 md:mt-2">
+
+            <DashboardPlatformSelectCard link={'../'} icon={'fa-solid fa-mobile'} platform={'Mobile'} active={true}/>
+            <DashboardPlatformSelectCard link={'../'} icon={'fa-solid fa-display'} platform={'PC'} />
+            <DashboardPlatformSelectCard link={'../'} icon={'fa-brands fa-playstation'} platform={'Playstation'}/>
+            <DashboardPlatformSelectCard link={'../'} icon={'fa-brands fa-xbox'} platform={'Xbox'}/>
+
+            </div>
 
         </div>
 
