@@ -1,0 +1,77 @@
+
+@use "./fonts";
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./typography" as *;
+
+.form-input{
+
+     border: 15px solid transparent;
+   border-image: url('../assets/input_border.png') 30 round;
+   outline: none;
+  
+
+    &::placeholder{
+        color:$color-gray2;
+        // font-weight: bold;
+    }
+}
+.search-input__games{
+    outline:none;
+    border:none
+
+    &:placeholder{
+        color:$color-white;
+    }
+}
+
+.search-input__challenges{
+
+    background: $color-dark-bg;
+    border-radius: 20px;
+
+    input{
+
+    outline:none;
+    border: none;
+    
+
+
+     &:placeholder{
+        color:$color-white;
+    }
+
+    &:focus{
+        outline: none;
+        border: none;
+    }
+
+    }
+
+}
+
+.dashboard_search{
+
+     background: $color-dark-bg;
+    border-radius: 20px;
+
+    input{
+
+    outline:none;
+    border: none;
+    
+
+
+     &:placeholder{
+        color:$color-white;
+    }
+
+    &:focus{
+        outline: none;
+        border: none;
+    }
+
+    }
+
+
+}

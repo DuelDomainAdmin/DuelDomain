@@ -1,0 +1,56 @@
+@use "./fonts";
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./typography" as *;
+
+.hero-gif_container{
+    position: relative;
+    background-color: $color-dark-bg;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-image: url('../assets/ghost.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 3px;
+        background: linear-gradient(to bottom, $color-primary 0%, $color-mid 50%, $color-secondary 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+.home-info_card{
+
+    position: relative;
+    background-color: $color-dark-bg;
+
+    border-radius: 20px;
+    border: none;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 3px;
+        background: linear-gradient(to bottom, $color-primary 0%, $color-mid 50%, $color-secondary 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+}

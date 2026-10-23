@@ -1,0 +1,551 @@
+
+@use "./fonts";
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./typography" as *;
+ .progress-gradient {
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-secondary 100%);
+  }
+
+  .scrolling-text {
+        // overflow: hidden;
+        white-space: nowrap;
+        animation: scroll 20s linear infinite;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+
+    .game_card{
+
+    position: relative;
+    background-color: $color-dark-bg;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 3px;
+        background: linear-gradient(to bottom, $color-primary 0%, $color-discord 50%, $color-secondary 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    &:hover{
+
+      background:linear-gradient(to bottom, $color-primary 0%, $color-discord 50%, $color-secondary 100%);
+
+      color: $color-white;
+    }
+
+}
+
+// .dotted_grd_border {
+//     border: 2px dotted transparent;
+//     border-image: linear-gradient(to bottom, $color-primary 0%, $color-discord 100%) 1;
+//     border-image-slice: 1;
+// }
+
+.dotted_grd_border {
+   border: 15px solid transparent;
+   border-left:none;
+   border-right:none;
+   border-image: url('../assets/dotted_border.png') 30 repeat;
+}
+
+// .dotted_grd_border::before,
+// .dotted_grd_border::after {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   width: 100%;
+//   height: 2px;
+
+//   background-image: repeating-linear-gradient(
+//     to right,
+//     transparent 0 2px,
+//     currentColor 2px 2px
+//   );
+
+//   background-size: 100% 1px;
+//   background-repeat: repeat-x;
+// }
+
+// .dotted_grd_border::before {
+//   top: 0;
+//   background-image: repeating-linear-gradient(
+//     to right,
+//     $color-primary 0 4px,
+//     transparent 4px 8px
+//   );
+// }
+
+// .dotted_grd_border::after {
+//   bottom: 0;
+//   background-image: repeating-linear-gradient(
+//     to right,
+//     $color-discord 0 4px,
+//     transparent 4px 8px
+//   );
+// }
+
+.disclaimer_popup-wrapper {
+ 
+  padding: 1rem;
+  position: relative;
+  background: linear-gradient(to right, red, purple);
+  padding: 3px;
+}
+
+.disclaimer_popup {
+    position: fixed;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    background-color: $color-dark-bg;
+    border-radius: 0px;
+    border: none;
+    z-index: 9999;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 0px;
+        padding: 2px;
+        background: linear-gradient(to bottom, $color-primary 0%, $color-discord 50%, $color-secondary 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+}
+
+.alert-success {
+//   background-color: $color-dark-bg;
+//   border-color: #10b981 !important;
+//   color: $color-white;
+ border-color: $color-primary !important;
+  position: relative;
+    background-color: $color-primary;
+    color:$color-white;
+}
+
+.alert-error {
+//   background-color: $color-dark-bg;
+//   border-color: $color-secondary !important;
+  color: $color-white;
+  position: relative;
+  background: $color-secondary;
+  border-color:$color-secondary !important;
+}
+
+.alert-neutral {
+//   background-color: $color-dark-bg;
+//   border-color: $color-primary !important;
+  color: $color-white;
+  position: relative;
+  background: $color-discord;
+  border-color:$color-discord !important;
+}
+
+ .avatar-wrapper {
+    position: relative;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: transparent;
+    padding: 0;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+    
+    &.avatar-selected {
+      
+      border:2px solid $color-discord;
+    }
+  }
+
+  .tournamets-game--bubble{
+    background: none;
+    border: 1px solid $color-white;
+    border-radius: 20px;
+    color: $color-white;
+
+    &:hover{
+      background: $color-primary;
+      border: none;
+    }
+  }
+  .tournamets-game--bubble.active {
+  background: $color-purple;
+  border:none;
+}
+.ongoing-tournament-card {
+  border: 15px solid transparent;
+  border-image: url('../assets/ongoing_tournament_border.png') 30 repeat;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.upcoming-tournaments-card{
+
+  border: 15px solid transparent;
+  border-image: url('../assets/upcoming_tournament_border.png') 30;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+.contact-right-container{
+  
+  border-right: 15px solid transparent;
+  border-image: url('../assets/contact_container.png') 30 repeat;
+}
+
+.tournament-carousel-section {
+    padding: 2rem 0;
+  }
+
+  .scrollbar-custom {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $color-primary $color-dark-bg;
+    
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: $color-dark-bg;
+      border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: $color-primary;
+      border-radius: 10px;
+      
+      &:hover {
+        background: $color-secondary;
+      }
+    }
+  }
+
+   .challenges-filter--bubble{
+    background: none;
+    border: 1px solid $color-white;
+    border-radius: 20px;
+    color: $color-white;
+
+    &:hover{
+      background: $color-purple;
+      border: none;
+    }
+  }
+  .challenges-filter--bubble.active {
+  background: $color-purple;
+  border:none;
+}
+
+.challenge_card{
+
+    position: relative;
+    background-color: $color-dark-bg;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 3px;
+        background: linear-gradient(to bottom, $color-primary 0%, $color-discord 50%, $color-secondary 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    
+    img{
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      
+    }
+
+   
+
+  
+
+}
+
+.ranking-table-head{
+   border: 1px dotted $color-discord;
+   border-left:none;
+   border-right:none;
+   border-top: none;
+   border-image: url('../assets/dotted_border.png') 30 repeat;
+}
+
+.ranking-table-row{
+
+  border: none;
+
+}
+
+  .rankings-filter--bubble{
+    background: none;
+    border: 1px solid $color-white;
+    border-radius: 20px;
+    color: $color-white;
+
+    &:hover{
+      background: $color-discord;
+      border: none;
+    }
+  }
+  .rankings-filter--bubble.active {
+  background: $color-discord;
+  border:none;
+}
+
+
+
+.community-info_card{
+
+  background-color: $color-purple;
+}
+
+.community-cta{
+
+   position: relative;
+    
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 3px;
+        background: linear-gradient(to bottom, $color-primary 0%, $color-discord 50%, $color-secondary 100%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+   
+
+
+}
+
+.community-server_infocard{
+
+  border:2px solid $color-gray;
+}
+
+.rewards-cta{
+
+ 
+    
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    
+   
+   
+
+
+}
+
+.dashboard-navitem{
+
+  color: $color-white;
+
+  // &:hover{
+
+  //   background: linear-gradient(to right, $color-primary 50%, $color-discord 70%);
+  //        -webkit-background-clip: text;
+  //   background-clip: text;
+  //   -webkit-text-fill-color: transparent;
+  // }
+
+  &:hover{
+
+    color:$color-gray2;
+  }
+
+
+ 
+}
+.dashboard-navitem.active{
+
+  color: $color-white;
+
+   background: linear-gradient(to right, $color-primary 0%, $color-discord 100%);
+    
+    &:hover{
+
+         background: linear-gradient(to right, $color-discord 0%, $color-primary 100%);
+         color:$color-white;
+
+    }
+  }
+
+  .top-card--dashboard{
+
+   background: linear-gradient(to right, $color-primary 0%, $color-discord 100%);
+    
+    &:hover{
+
+         background: linear-gradient(to right, $color-discord 0%, $color-primary 100%);
+
+    }
+
+    cursor: pointer;
+  }
+
+  .top-card--balance{
+    background: transparent;
+    border:5px solid $color-primary;
+  }
+
+  .dashboard-game-card{
+    background-position: center;
+    background-repeat:no-repeat; 
+    background-size:cover;
+
+  }
+
+  .dashboard-platform-select--card{
+
+    border: 1px solid $color-white;
+    color: $color-white;
+
+
+    
+
+     &:hover{
+         background: linear-gradient(to right, $color-discord 0%, $color-primary 100%);
+         -webkit-background-clip: text;
+    background-clip:text;
+    -webkit-text-fill-color: transparent;
+     }
+
+
+  }
+
+  .dashboard-platform-select--card.active{
+
+     background: linear-gradient(to right, $color-primary 0%, $color-discord 100%);
+    -webkit-background-clip: text;
+    background-clip: border-box;
+    -webkit-text-fill-color: $color-white;
+    border: none;
+
+    &:hover{
+         background: linear-gradient(to right, $color-discord 0%, $color-primary 100%);
+         -webkit-background-clip: text;
+    background-clip: border-box;
+    -webkit-text-fill-color: $color-white;
+    
+
+    }
+
+
+  }
+
+ .platform-game-card{
+    background-position: center;
+    background-repeat:no-repeat; 
+    background-size:cover;
+
+  }
+  
+
+  .match-game-select{
+
+      border: 10px solid transparent;
+  border-image: url('../assets/upcoming_tournament_border.png') 30;
+    background-color: $color-black;
+    color: white;
+    outline: none;
+  }
+  .match-game-item{
+    background: none !important;
+    color: $color-white !important;
+    cursor: pointer;
+
+    &:hover{
+       background: linear-gradient(to right, $color-discord 0%, $color-primary 100%) !important;
+         color:$color-white; 
+    }
+  }
+
+  .match-card{
+    background-position: center;
+    background-repeat:no-repeat; 
+    background-size:cover;
+
+  }
+
+  .duel-price-card{
+
+    cursor: pointer;
+    background: $color-dark-bg;
+
+    &:hover{
+      background: none;
+    }
+
+
+  }
+
+  .duel-price-card.active{
+
+          background: linear-gradient(to right, $color-primary 0%, $color-discord 100%) !important;
+         color:$color-white; 
+         color:$color-white; 
+        //  border: 1px solid $color-white;
+
+
+          &:hover{
+       background: linear-gradient(to right, $color-discord 0%, $color-primary 100%) !important;
+         color:$color-white; 
+    }
+
+
+  }

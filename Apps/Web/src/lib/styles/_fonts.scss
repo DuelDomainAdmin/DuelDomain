@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('$lib/assets/fonts/static/SpaceGrotesk-Regular.ttf')
+       format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.font-space {
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('$lib/assets/fonts/static/SpaceGrotesk-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
