@@ -46,9 +46,7 @@
                     <h1 class="font-bold text-2xl text-center md:text-left">
                         What is Duel Domain ?
                     </h1>
-                    <p class="text-center md:text-left">Duel Domain is a platform built to bring competitive gaming and digital experiences together in one place. We’re creating an ecosystem where players can compete, connect, and engage through skill-based challenges, with a focus on making every interaction seamless, accessible, and rewarding.
-
-                    Our goal is to build more than just a platform. We want to create a space where competition drives engagement, technology creates possibilities, and every user has the opportunity to be part of something bigger.</p>
+                    <p class="text-center md:text-left">Duel Domain is a platform built to bring competitive gaming and digital experiences together in one place. We’re creating an ecosystem where players can compete, connect, and engage through skill-based challenges, with a focus on making every interaction seamless, accessible, and rewarding.</p>
                     <div class="mt-4 hidden md:block">
                          <a href="Sign-In" class="btn-primary--rounded px-4 py-1 mt-3 text-sm flex flex-row gap-1 items-center w-30" title="">Play Now <i class="fa-solid fa-gamepad"></i></a>
                     </div>
