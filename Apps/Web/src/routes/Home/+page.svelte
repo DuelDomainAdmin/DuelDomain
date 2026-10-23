@@ -97,7 +97,7 @@
             <HomeInfoCard 
   icon="fa-solid fa-gamepad"
   title="Find your featured battle ground"
-  description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio obcaecati consequuntur assumenda magni aliquam minus, eveniet illum odit veritatis vero? Voluptatem doloremque placeat fuga commodi maiores animi labore eligendi sed."
+  description="Discover featured battles, explore your favorite arenas, and find the perfect battleground to test your skills. Choose your arena and get ready for the action."
 />
 <HomeInfoCard 
   icon="fa-solid fa-chess-rook"
