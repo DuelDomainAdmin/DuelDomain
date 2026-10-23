@@ -10,7 +10,7 @@
 <div class="xl:px-30 px-5 mt-20">
 
     <div class="flex flex-row">
-        <div class="col-lg-6 col-12 hidden xl:flex flex-col contact-right-container">
+        <div class="lg:w-3/6 2-full hidden xl:flex flex-col contact-right-container">
 <!-- 
               <div class="absolute top-0 left-0 w-full h-full z-0 layer-blur pointer-events-none">
         <img class="w-full h-full" src={blob} alt="">
@@ -38,7 +38,7 @@
 
 
         </div>
-        <div class="col-xl-6 col-12 p-5 ">
+        <div class="xl:w-3/6 w-full p-5 ">
             <p class="text-xl font-bold text-center">Send A Message</p>
 
             <div class="flex flex-col mt-10 ">

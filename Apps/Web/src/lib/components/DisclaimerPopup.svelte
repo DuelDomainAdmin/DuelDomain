@@ -27,9 +27,11 @@
     
     <div class="py-4">
       <p class="text-sm text-gray-300 leading-relaxed">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. This platform is for entertainment purposes only. 
-        By using this service, you acknowledge that you have read and agree to our terms and conditions. 
-        Please gamble responsibly and know your limits.
+          Duel Domain provides a platform for competitive digital experiences. By accessing or using the platform, you acknowledge that you understand and agree to our Terms and Conditions and applicable policies. You are responsible for ensuring that your use of the platform complies with the laws and regulations applicable in your location.
+
+If the platform involves wagering, entry fees, or monetary rewards, please participate responsibly and only where legally permitted. Never risk more than you can afford to lose. Duel Domain does not guarantee winnings, financial returns, or any particular outcome from participation.
+
+By continuing, you confirm that you have read and understood this disclaimer.
       </p>
     </div>
     
