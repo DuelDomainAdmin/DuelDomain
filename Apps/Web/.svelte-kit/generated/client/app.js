@@ -47,7 +47,7 @@ export const dictionary = {
 		"/Rewards": [17],
 		"/Select-Avatar": [18],
 		"/Sign-In": [19],
-		"/Sign-Up": [20],
+		"/Sign-Up": [~20],
 		"/Tournaments": [21],
 		"/Welcome": [22]
 	};
