@@ -81,7 +81,7 @@
                         {/if}
 
                         <input
-                            class="form-input px-3 py-4 mt-5"
+                        class="form-input px-3 py-4 mt-5"
                             name="confirmPassword"
                             type="password"
                             placeholder="Confirm password"

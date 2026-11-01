@@ -13,7 +13,8 @@ export const actions: Actions = {
         const raw = {
             email: String(formData.get('email') ?? ''),
             username: String(formData.get('username') ?? ''),
-            password: String(formData.get('password') ?? '')
+            password: String(formData.get('password') ?? ''),
+            confirmPassword: String(formData.get('confirmPassword') ?? '')
         };
 
         const values = { email: raw.email, username: raw.username };
@@ -28,8 +29,10 @@ export const actions: Actions = {
             });
         }
 
+         const { email, username, password } = parsed.data;
+
         try {
-            await signUp(parsed.data, { fetch });
+          await signUp({ email, username, password }, { fetch });
         } catch (error) {
             if (error instanceof ApiError) {
                 return fail(error.status, {
