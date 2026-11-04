@@ -48,7 +48,7 @@ export const dictionary = {
 		"/Home": [15],
 		"/Rankings": [16],
 		"/Rewards": [17],
-		"/Select-Avatar": [18],
+		"/Select-Avatar": [~18],
 		"/Sign-In": [~19],
 		"/Sign-Up": [~20],
 		"/Sign-Up/Verify": [~21],
