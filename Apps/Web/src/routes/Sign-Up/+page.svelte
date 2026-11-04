@@ -5,16 +5,19 @@
     import { ROUTES } from '$lib/config/routes';
     import { notify } from '$lib/stores/notifyStore';
     import type { ActionData } from './$types';
+    import { setTempEmail } from '$lib/features/auth/storage/temp-email';
 
     let { form }: { form: ActionData } = $props();
     let loading = $state(false);
 
-    const handleSubmit: SubmitFunction = () => {
+     const handleSubmit: SubmitFunction = ({ formData }) => {
         loading = true;
+        const email = String(formData.get('email') ?? '').trim();
 
         return async ({ result, update }) => {
             if (result.type === 'redirect') {
-                notify.success('Account created. Please sign in.');
+                setTempEmail(email);
+                notify.success('Account created. Please Verify your account to continue.');
             }
 
             if (result.type === 'failure') {

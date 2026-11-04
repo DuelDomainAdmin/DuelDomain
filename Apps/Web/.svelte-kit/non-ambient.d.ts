@@ -27,7 +27,7 @@ export {};
 
 declare module "$app/types" {
 	export interface AppTypes {
-		RouteId(): "/" | "/About" | "/Blank" | "/Challenges" | "/Community" | "/Contact" | "/Dashboard" | "/Dashboard/Add-Duels" | "/Dashboard/Games" | "/Dashboard/Matches" | "/Dashboard/Stake" | "/Forgot-Password" | "/Games" | "/Home" | "/Rankings" | "/Rewards" | "/Select-Avatar" | "/Sign-In" | "/Sign-Up" | "/Tournaments" | "/Welcome";
+		RouteId(): "/" | "/About" | "/Blank" | "/Challenges" | "/Community" | "/Contact" | "/Dashboard" | "/Dashboard/Add-Duels" | "/Dashboard/Games" | "/Dashboard/Matches" | "/Dashboard/Stake" | "/Forgot-Password" | "/Games" | "/Home" | "/Rankings" | "/Rewards" | "/Select-Avatar" | "/Sign-In" | "/Sign-Up" | "/Sign-Up/Verify" | "/Tournaments" | "/Welcome";
 		RouteParams(): {
 			
 		};
@@ -51,10 +51,11 @@ declare module "$app/types" {
 			"/Select-Avatar": Record<string, never>;
 			"/Sign-In": Record<string, never>;
 			"/Sign-Up": Record<string, never>;
+			"/Sign-Up/Verify": Record<string, never>;
 			"/Tournaments": Record<string, never>;
 			"/Welcome": Record<string, never>
 		};
-		Pathname(): "/" | "/About" | "/About/" | "/Blank" | "/Blank/" | "/Challenges" | "/Challenges/" | "/Community" | "/Community/" | "/Contact" | "/Contact/" | "/Dashboard" | "/Dashboard/" | "/Dashboard/Add-Duels" | "/Dashboard/Add-Duels/" | "/Dashboard/Games" | "/Dashboard/Games/" | "/Dashboard/Matches" | "/Dashboard/Matches/" | "/Dashboard/Stake" | "/Dashboard/Stake/" | "/Forgot-Password" | "/Forgot-Password/" | "/Games" | "/Games/" | "/Home" | "/Home/" | "/Rankings" | "/Rankings/" | "/Rewards" | "/Rewards/" | "/Select-Avatar" | "/Select-Avatar/" | "/Sign-In" | "/Sign-In/" | "/Sign-Up" | "/Sign-Up/" | "/Tournaments" | "/Tournaments/" | "/Welcome" | "/Welcome/";
+		Pathname(): "/" | "/About" | "/About/" | "/Blank" | "/Blank/" | "/Challenges" | "/Challenges/" | "/Community" | "/Community/" | "/Contact" | "/Contact/" | "/Dashboard" | "/Dashboard/" | "/Dashboard/Add-Duels" | "/Dashboard/Add-Duels/" | "/Dashboard/Games" | "/Dashboard/Games/" | "/Dashboard/Matches" | "/Dashboard/Matches/" | "/Dashboard/Stake" | "/Dashboard/Stake/" | "/Forgot-Password" | "/Forgot-Password/" | "/Games" | "/Games/" | "/Home" | "/Home/" | "/Rankings" | "/Rankings/" | "/Rewards" | "/Rewards/" | "/Select-Avatar" | "/Select-Avatar/" | "/Sign-In" | "/Sign-In/" | "/Sign-Up" | "/Sign-Up/" | "/Sign-Up/Verify" | "/Sign-Up/Verify/" | "/Tournaments" | "/Tournaments/" | "/Welcome" | "/Welcome/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
 		Asset(): "/robots.txt" | string & {};
 	}

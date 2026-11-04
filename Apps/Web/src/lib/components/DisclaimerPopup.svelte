@@ -27,7 +27,7 @@
     
     <div class="py-4">
       <p class="text-sm text-gray-300 leading-relaxed">
-          Duel Domain provides a platform for competitive digital experiences. By accessing or using the platform, you acknowledge that you understand and agree to our Terms and Conditions and applicable policies. You are responsible for ensuring that your use of the platform complies with the laws and regulations applicable in your location.By continuing, you confirm that you have read and understood this disclaimer.
+          Duel Domain provides a platform for competitive digital experiences. By accessing or using the platform, you acknowledge that you understand and agree to our Terms and Conditions and applicable policies. You are responsible for ensuring that your use of the platform complies with the laws and regulations applicable in your location.By continuing, you confirm that you have read and understood this disclaimer.You must also be 18 years of age or older to use the platform. If you do not agree with any part of this disclaimer, please refrain from using the platform.
       </p>
     </div>
     

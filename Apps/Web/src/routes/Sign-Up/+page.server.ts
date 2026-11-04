@@ -44,6 +44,6 @@ export const actions: Actions = {
             throw error;
         }
 
-        redirect(303, ROUTES.signIn);
+        redirect(303, ROUTES.verifyaccount);
     }
 };
