@@ -1,13 +1,9 @@
 import { z } from 'zod';
-import { AVATAR_URL_PREFIX } from './generator';
+
+export const AVATAR_VALUE_PATTERN = /^dicebear\/img\/[A-Za-z0-9_-]{1,64}$/;
 
 export const selectAvatarSchema = z.object({
-    avatar: z
-        .string()
-        .trim()
-        .min(1, 'Choose an avatar.')
-        .max(255, 'Avatar value is too long.')
-        .startsWith(AVATAR_URL_PREFIX, 'Choose a valid avatar.')
+    avatar: z.string().trim().regex(AVATAR_VALUE_PATTERN, 'Choose a valid avatar.')
 });
 
 export type SelectAvatarInput = z.infer<typeof selectAvatarSchema>;

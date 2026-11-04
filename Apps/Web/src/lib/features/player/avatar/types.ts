@@ -6,6 +6,7 @@ export interface PlayerAvatar {
 
 export interface AvatarOption {
     src: string;
+    value: string;
     alt: string;
     fallback: string;
 }

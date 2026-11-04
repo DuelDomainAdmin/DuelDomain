@@ -15,8 +15,8 @@
         avatars = generateAvatars();
     });
 
-    function toggleAvatar(src: string) {
-        selectedAvatar = selectedAvatar === src ? null : src;
+    function toggleAvatar(value: string) {
+        selectedAvatar = selectedAvatar === value ? null : value;
     }
 
     function regenerateAvatars() {
@@ -58,13 +58,13 @@
     </div>
 
     <div class="flex flex-row flex-wrap items-center justify-center gap-8 mt-10">
-        {#each avatars as avatar (avatar.src)}
+        {#each avatars as avatar (avatar.value)}
             <Avatar
                 src={avatar.src}
                 alt={avatar.alt}
                 fallback={avatar.fallback}
-                isSelected={selectedAvatar === avatar.src}
-                onClick={() => toggleAvatar(avatar.src)}
+                isSelected={selectedAvatar === avatar.value}
+                onClick={() => toggleAvatar(avatar.value)}
             />
         {/each}
     </div>
