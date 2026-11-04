@@ -36,10 +36,10 @@ export const actions: Actions = {
         let destination: string;
 
         try {
-            const { access_token } = await signIn(parsed.data, { fetch });
-            const { avatar_selected } = await getMyAvatar({ token: access_token, fetch });
+              const token = await signIn(parsed.data, { fetch });
+              const { avatar_selected } = await getMyAvatar({ token, fetch });
 
-            setSessionToken(cookies, access_token);
+            setSessionToken(cookies, token);
             destination = avatar_selected ? ROUTES.dashboard : ROUTES.selectAvatar;
         } catch (error) {
             if (error instanceof ApiError) {
