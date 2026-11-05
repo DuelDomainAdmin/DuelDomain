@@ -4,20 +4,32 @@
 @use "./colors" as *;
 @use "./typography" as *;
 
-.form-input{
+$input-text-color: #fff !default;
 
-   border: 15px solid transparent;
-   border-image: url('../assets/input_border.png') 30 round;
-   outline: none;
-   background: none;
-   background-color: transparent;
-  
+.form-input {
+    border: 15px solid transparent;
+    border-image: url('../assets/input_border.png') 30 round;
+    outline: none;
+    background: none;
+    background-color: transparent;
 
-    &::placeholder{
-        color:$color-gray2;
-        // font-weight: bold;
+    &::placeholder {
+        color: $color-gray2;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active,
+    &:autofill {
+        -webkit-text-fill-color: $input-text-color;
+        caret-color: $input-text-color;
+        transition:
+            background-color 600000s 0s,
+            color 600000s 0s;
     }
 }
+
 .search-input__games{
     outline:none;
     border:none
