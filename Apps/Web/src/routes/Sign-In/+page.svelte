@@ -49,7 +49,7 @@
                             class="form-input px-3 py-4"
                             name="email"
                             type="text"
-                            placeholder="Email or Username"
+                            placeholder="Email"
                             autocomplete="username"
                             value={form?.values?.email ?? ''}
                             aria-invalid={form?.fieldErrors?.email ? 'true' : undefined}

@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/Dashboard/Stake/+page.svelte";
+export { default as component } from "../../../../src/routes/Dashboard/Matches/+page.svelte";

@@ -1,11 +1,18 @@
 import { apiRequest } from '$lib/server/api/client';
 import { ApiError } from '$lib/server/api/errors';
+import type { ForgotPasswordInput } from '../schemas/forgot-password';
 import type { SignInInput } from '../schemas/sign-in';
 import type { SignUpPayload } from '../schemas/sign-up';
 import type { ResendVerificationInput, VerifyEmailInput } from '../schemas/verify-email';
 
 interface RequestContext {
     fetch: typeof fetch;
+}
+
+interface ResetPasswordPayload {
+    email: string;
+    otp: string;
+    new_password: string;
 }
 
 const TOKEN_KEYS = ['access_token', 'access', 'token'];
@@ -62,6 +69,28 @@ export async function resendVerification(
     { fetch }: RequestContext
 ): Promise<void> {
     await apiRequest<unknown>('/auth/resend-verification/', {
+        method: 'POST',
+        body: input,
+        fetch
+    });
+}
+
+export async function forgotPassword(
+    input: ForgotPasswordInput,
+    { fetch }: RequestContext
+): Promise<void> {
+    await apiRequest<unknown>('/auth/forgot-password/', {
+        method: 'POST',
+        body: input,
+        fetch
+    });
+}
+
+export async function resetPassword(
+    input: ResetPasswordPayload,
+    { fetch }: RequestContext
+): Promise<void> {
+    await apiRequest<unknown>('/auth/reset-password/', {
         method: 'POST',
         body: input,
         fetch

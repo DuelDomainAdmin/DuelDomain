@@ -6,9 +6,11 @@
 
 .form-input{
 
-     border: 15px solid transparent;
+   border: 15px solid transparent;
    border-image: url('../assets/input_border.png') 30 round;
    outline: none;
+   background: none;
+   background-color: transparent;
   
 
     &::placeholder{

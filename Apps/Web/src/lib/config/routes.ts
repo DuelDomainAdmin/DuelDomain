@@ -6,4 +6,6 @@ export const ROUTES = {
     dashboard: '/Dashboard',
     selectAvatar: '/Select-Avatar',
     forgotPassword: '/Forgot-Password',
+    forgotPasswordVerify: '/Forgot-Password/Verify',
+    changePassword: '/Change-Password',
 } as const;

@@ -26,7 +26,9 @@ export const nodes = [
 	() => import('./nodes/20'),
 	() => import('./nodes/21'),
 	() => import('./nodes/22'),
-	() => import('./nodes/23')
+	() => import('./nodes/23'),
+	() => import('./nodes/24'),
+	() => import('./nodes/25')
 ];
 
 export const server_loads = [];
@@ -36,24 +38,26 @@ export const dictionary = {
 		"/About": [3],
 		"/Blank": [4],
 		"/Challenges": [5],
-		"/Community": [6],
-		"/Contact": [7],
-		"/Dashboard": [8],
-		"/Dashboard/Add-Duels": [9],
-		"/Dashboard/Games": [10],
-		"/Dashboard/Matches": [11],
-		"/Dashboard/Stake": [12],
-		"/Forgot-Password": [13],
-		"/Games": [14],
-		"/Home": [15],
-		"/Rankings": [16],
-		"/Rewards": [17],
-		"/Select-Avatar": [~18],
-		"/Sign-In": [~19],
-		"/Sign-Up": [~20],
-		"/Sign-Up/Verify": [~21],
-		"/Tournaments": [22],
-		"/Welcome": [23]
+		"/Change-Password": [~6],
+		"/Community": [7],
+		"/Contact": [8],
+		"/Dashboard": [9],
+		"/Dashboard/Add-Duels": [10],
+		"/Dashboard/Games": [11],
+		"/Dashboard/Matches": [12],
+		"/Dashboard/Stake": [13],
+		"/Forgot-Password": [~14],
+		"/Forgot-Password/Verify": [~15],
+		"/Games": [16],
+		"/Home": [17],
+		"/Rankings": [18],
+		"/Rewards": [19],
+		"/Select-Avatar": [~20],
+		"/Sign-In": [~21],
+		"/Sign-Up": [~22],
+		"/Sign-Up/Verify": [~23],
+		"/Tournaments": [24],
+		"/Welcome": [25]
 	};
 
 export const hooks = {
