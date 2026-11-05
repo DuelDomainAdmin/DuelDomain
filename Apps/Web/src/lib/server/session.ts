@@ -2,7 +2,7 @@ import { dev } from '$app/environment';
 import type { Cookies } from '@sveltejs/kit';
 
 const SESSION_COOKIE = 'dd_session';
-const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 7;
+const SESSION_MAX_AGE_SECONDS = 60 * 10;
 
 export function getSessionToken(cookies: Cookies): string | null {
     return cookies.get(SESSION_COOKIE) ?? null;
