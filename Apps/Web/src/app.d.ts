@@ -4,6 +4,7 @@ declare global {
     namespace App {
         interface Locals {
             token: string | null;
+            adminToken: string | null;
         }
         interface PageData {
             user?: PlayerProfile;

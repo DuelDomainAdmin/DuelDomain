@@ -138,6 +138,7 @@
             <DashboardPlatformSelectCard link={'../'} icon={'fa-solid fa-display'} platform={'PC'} />
             <DashboardPlatformSelectCard link={'../'} icon={'fa-brands fa-playstation'} platform={'Playstation'}/>
             <DashboardPlatformSelectCard link={'../'} icon={'fa-brands fa-xbox'} platform={'Xbox'}/>
+            <DashboardPlatformSelectCard link={'../'} icon={'fa-solid fa-circle-nodes'} platform={'Cross-Platform'}/>
 
             </div>
 

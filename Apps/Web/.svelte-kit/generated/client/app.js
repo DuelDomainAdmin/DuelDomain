@@ -47,7 +47,7 @@ export const dictionary = {
 		"/Admin/Dashboard/Operations/Games/Delete": [6],
 		"/Admin/Dashboard/Operations/Games/Update": [7],
 		"/Admin/Dashboard/Operations/Games/Update/Game": [8],
-		"/Admin/Sign-In": [9],
+		"/Admin/Sign-In": [~9],
 		"/Blank": [10],
 		"/Challenges": [11],
 		"/Change-Password": [~12],

@@ -4,6 +4,7 @@ import type { ForgotPasswordInput } from '../schemas/forgot-password';
 import type { SignInInput } from '../schemas/sign-in';
 import type { SignUpPayload } from '../schemas/sign-up';
 import type { ResendVerificationInput, VerifyEmailInput } from '../schemas/verify-email';
+import { extractToken } from '$lib/server/api/token';
 
 interface RequestContext {
     fetch: typeof fetch;
@@ -15,18 +16,7 @@ interface ResetPasswordPayload {
     new_password: string;
 }
 
-const TOKEN_KEYS = ['access_token', 'access', 'token'];
 
-function extractToken(body: unknown): string | null {
-    if (typeof body !== 'object' || body === null) return null;
-
-    for (const key of TOKEN_KEYS) {
-        const value = (body as Record<string, unknown>)[key];
-        if (typeof value === 'string' && value) return value;
-    }
-
-    return null;
-}
 
 export async function signUp(input: SignUpPayload, { fetch }: RequestContext): Promise<void> {
     await apiRequest<unknown>('/auth/signup/', {

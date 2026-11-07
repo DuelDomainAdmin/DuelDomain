@@ -8,4 +8,7 @@ export const ROUTES = {
     forgotPassword: '/Forgot-Password',
     forgotPasswordVerify: '/Forgot-Password/Verify',
     changePassword: '/Change-Password',
+    admin: '/Admin',
+    adminSignIn: '/Admin/Sign-In',
+    adminDashboard: '/Admin/Dashboard',
 } as const;
