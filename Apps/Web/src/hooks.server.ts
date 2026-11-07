@@ -9,14 +9,17 @@ export const handle: Handle = async ({ event, resolve }) => {
     event.locals.adminToken = getAdminSessionToken(event.cookies);
 
     const { pathname } = event.url;
+    const isAdminPath = isAdminProtectedPath(pathname);
+    const isPlayerPath = isProtectedPath(pathname);
 
-    if (!event.locals.adminToken && isAdminProtectedPath(pathname)) {
-        redirect(303, ROUTES.adminSignIn);
+    if (isAdminPath && !event.locals.adminToken) redirect(303, ROUTES.adminSignIn);
+    if (isPlayerPath && !event.locals.token) redirect(303, ROUTES.signIn);
+
+    const response = await resolve(event);
+
+    if (isAdminPath || isPlayerPath) {
+        response.headers.set('Cache-Control', 'no-store');
     }
 
-    if (!event.locals.token && isProtectedPath(pathname)) {
-        redirect(303, ROUTES.signIn);
-    }
-
-    return resolve(event);
+    return response;
 };
