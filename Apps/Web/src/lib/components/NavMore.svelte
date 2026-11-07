@@ -1,30 +1,21 @@
 <script lang="ts">
-import { enhance } from "$app/forms";
-import type { SubmitFunction } from "@sveltejs/kit";
+import { goto } from "$app/navigation";
 import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
 import { ROUTES } from "$lib/config/routes";
 import { notify } from "$lib/stores/notifyStore";
 
-let signOutForm: HTMLFormElement;
+async function signOut() {
+	const response = await fetch(ROUTES.signOut, { method: "POST" });
 
-const handleSignOut: SubmitFunction = () => {
-	return async ({ result, update }) => {
-		if (result.type === "redirect") {
-			notify.success("Signed out.");
-		}
+	if (!response.ok) {
+		notify.error("Could not sign out. Please try again.");
+		return;
+	}
 
-		await update();
-	};
-};
+	notify.success("Signed out.");
+	await goto(ROUTES.signIn, { invalidateAll: true });
+}
 </script>
-
-<form
-	bind:this={signOutForm}
-	method="POST"
-	action={ROUTES.signOut}
-	use:enhance={handleSignOut}
-	class="hidden"
-></form>
 
  <DropdownMenu.Root>
 	<DropdownMenu.Trigger class=""><i class="fa-solid fa-ellipsis text-gray"></i></DropdownMenu.Trigger>
@@ -73,7 +64,7 @@ const handleSignOut: SubmitFunction = () => {
 		</DropdownMenu.Group>
 		<DropdownMenu.Separator class="" />
 		<DropdownMenu.Group>
-			<DropdownMenu.Item inset={false} class="" onSelect={() => signOutForm.requestSubmit()}>
+			<DropdownMenu.Item inset={false} class="" onSelect={signOut}>
 				Log out
 				<DropdownMenu.Shortcut class=""><i class="fa-solid fa-arrow-right-from-bracket"></i></DropdownMenu.Shortcut>
 			</DropdownMenu.Item>
