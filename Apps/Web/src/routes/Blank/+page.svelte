@@ -9,6 +9,7 @@
  import dash_ff from "$lib/assets/dash_ff.jpg";
  import dash_mk from "$lib/assets/dash_mk.jpg";
  import DashboardGameCard from '$lib/components/ui/DashboardGameCard.svelte';
+ import DashboardSideBarFooter from '$lib/components/DashboardSideBarFooter.svelte';
 
 
  
@@ -100,17 +101,7 @@
 
    
 
-       <div class="flex flex-row justify-between items-center">
-         <div class="rounded-full">
-
-             <img class="w-5 h-5 md:w-8 md:h-8" src="https://api.dicebear.com/9.x/adventurer/svg?seed=Jade" alt="">
-
-        </div>
-
-        <div>
-            <button title="settings"><i class="fa-solid fa-gear text-gray"></i></button>
-        </div>
-       </div>
+       <DashboardSideBarFooter/>
 
   
 

@@ -78,9 +78,9 @@
                     </div>
 
                     <div class="mt-4 flex justify-center">
-                        <a class="grd_one text-sm" href={ROUTES.forgotPasswordVerify}>
+                        <!-- <a class="grd_one text-sm" href={ROUTES.forgotPasswordVerify}>
                             Re-enter verification code
-                        </a>
+                        </a> -->
                     </div>
                 </form>
             </div>

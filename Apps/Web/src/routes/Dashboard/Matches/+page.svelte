@@ -10,6 +10,7 @@
   import dash_mk from "$lib/assets/dash_mk.jpg";
   import * as Select from "$lib/components/ui/select/index.js";
   import MatchCard from '$lib/components/ui/MatchCard.svelte';
+  import DashboardSideBarFooter from '$lib/components/DashboardSideBarFooter.svelte';
   
 
   const games = [
@@ -47,14 +48,7 @@
       </div>
     </div>
 
-    <div class="flex flex-row justify-between items-center">
-      <div class="rounded-full">
-        <img class="w-5 h-5 md:w-8 md:h-8" src="https://api.dicebear.com/9.x/adventurer/svg?seed=Jade" alt="">
-      </div>
-      <div>
-        <button title="settings"><i class="fa-solid fa-gear text-gray"></i></button>
-      </div>
-    </div>
+     <DashboardSideBarFooter/>
 
   </div>
 

@@ -1,0 +1,157 @@
+@use "./fonts";
+@use "./mixins" as *;
+@use "./colors" as *;
+@use "./typography" as *;
+
+
+.link-primary{
+
+    outline: none;
+    border:none;
+    background-color: $color-primary;
+    color:$color-white;
+    cursor: pointer;
+
+    &:hover{
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-discord 100%);
+    -webkit-background-clip:border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color:$color-white;
+    color: $color-white;
+    }
+
+    
+}
+
+.link-primary--rounded {
+    @extend .link-primary;
+    border-radius: 20px;
+}
+
+.link-secondary{
+
+     background: linear-gradient(to bottom, $color-primary 0%,  $color-discord 100%);
+     color: $color-white;
+     outline: none;
+
+     
+
+
+}
+
+.link-secondary--rounded {
+    @extend .link-secondary;
+    border-radius: 20px;
+}
+
+.link-purple{
+
+    outline: none;
+    border:none;
+    background-color: $color-purple;
+    color:$color-white;
+    cursor: pointer;
+
+    &:hover{
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-discord 100%);
+    -webkit-background-clip:border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color:$color-white;
+    color: $color-white;
+    }
+
+    
+}
+
+.link-primary_grd-one{
+
+  
+
+     background: linear-gradient(to right, $color-discord 0%,  $color-primary 100%);
+     color: $color-white;
+     outline: none;
+
+     &:hover{
+
+      background: linear-gradient(to right, $color-primary 0%,  $color-discord 100%);
+     color: $color-white;
+     outline: none;
+
+     }
+
+     
+
+
+}
+
+.link-primary_grd-two{
+
+     background: linear-gradient(to right, $color-primary 0%,  $color-discord 100%);
+     color: $color-white;
+     outline: none;
+
+     &:hover{
+
+         background: linear-gradient(to right, $color-discord 0%,  $color-primary 100%);
+     color: $color-white;
+     outline: none;
+
+     }
+
+     
+
+
+}
+
+.round-link{
+     border-radius: 20px;
+}
+
+.tournament-register-link{
+    background: $color-purple;
+    color: $color-white;
+
+    &--closed{
+        background-color: $color-gray2;
+        color: $color-white;
+        pointer-events: none;
+    }
+}
+
+.link-discord{
+
+    outline: none;
+    border:none;
+    background-color: $color-discord;
+    color:$color-white;
+    cursor: pointer;
+
+    &:hover{
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-discord 100%);
+    -webkit-background-clip:border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color:$color-white;
+    color: $color-white;
+    }
+
+    
+}
+
+.link-white{
+
+    outline: none;
+    border:none;
+    background-color: $color-white;
+    color:$color-purple;
+    cursor: pointer;
+
+    &:hover{
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-discord 100%);
+    -webkit-background-clip:border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color:$color-white;
+    color: $color-white;
+    }
+
+    
+}

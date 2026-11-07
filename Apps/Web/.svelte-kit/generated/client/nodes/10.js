@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/Dashboard/Add-Duels/+page.svelte";
+export { default as component } from "../../../../src/routes/Blank/+page.svelte";

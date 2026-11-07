@@ -13,6 +13,7 @@
   import dash_mk from "$lib/assets/dash_mk.jpg";
   import * as RadioGroup from "$lib/components/ui/radio-group/index.js";
   import { Label } from "$lib/components/ui/label/index.js";
+  import DashboardSideBarFooter from '$lib/components/DashboardSideBarFooter.svelte';
   let selectedPrice: string | null = null;
   let customAmount: string = '';
   let selectedPlatform: string | null = null;
@@ -34,6 +35,7 @@
     { icon: 'fa-solid fa-display',      platform: 'PC'          },
     { icon: 'fa-brands fa-playstation', platform: 'Playstation' },
     { icon: 'fa-brands fa-xbox',        platform: 'Xbox'        },
+    { icon: 'fa-solid fa-circle-nodes', platform: 'Cross-Platform' },
   ];
 
   const games = [
@@ -94,10 +96,7 @@
         <DashBoardSideBar active={'Stake'} />
       </div>
     </div>
-    <div class="flex flex-row justify-between items-center">
-      <img class="w-5 h-5 md:w-8 md:h-8 rounded-full" src="https://api.dicebear.com/9.x/adventurer/svg?seed=Jade" alt="" />
-      <button aria-label="Settings"><i class="fa-solid fa-gear text-gray"></i></button>
-    </div>
+     <DashboardSideBarFooter/>
   </div>
 
 
