@@ -11,4 +11,5 @@ export const ROUTES = {
     admin: '/Admin',
     adminSignIn: '/Admin/Sign-In',
     adminDashboard: '/Admin/Dashboard',
+    signOut: '/Sign-Out',
 } as const;

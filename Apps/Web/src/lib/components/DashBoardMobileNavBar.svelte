@@ -1,5 +1,6 @@
 <script lang="ts">
     import DashBoardMobileNavItem from "./ui/DashBoardMobileNavItem.svelte";
+    import NavMore from "./NavMore.svelte";
 
     export let active: string | number = 'Home';
 
@@ -8,7 +9,7 @@
         { name: 'Games',   icon: 'fa-solid fa-gamepad',  link: '../Dashboard/Games/', slot: 'nav' },
         { name: 'Stake',   icon: 'fa-solid fa-wallet',   link: '../Dashboard/Stake/', slot: 'centered' },
         { name: 'Matches', icon: 'fa-solid fa-burst',    link: '../Dashboard/Matches', slot: 'nav' },
-        { name: 'More',    icon: 'fa-solid fa-ellipsis', link: '../', slot: 'nav' },
+        { name: 'More',    icon: 'fa-solid fa-ellipsis', link: '../', slot: 'more' },
     ];
 
     function isActive(item: { name: string }, index: number): boolean {
@@ -35,6 +36,8 @@
                         <span class="font-bold text-xs">{item.name}</span>
                     </a>
                 </div>
+            {:else if item.slot === 'more'}
+                <NavMore />
             {:else}
                 <DashBoardMobileNavItem
                     active={isActive(item, i)}
