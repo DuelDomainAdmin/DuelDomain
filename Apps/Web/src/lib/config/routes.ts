@@ -12,4 +12,6 @@ export const ROUTES = {
     adminSignIn: '/Admin/Sign-In',
     adminDashboard: '/Admin/Dashboard',
     signOut: '/Sign-Out',
+    adminAddGame: '/Admin/Dashboard/Operations/Games/Add',
+    adminDeleteGame: '/Admin/Dashboard/Operations/Games/Delete',
 } as const;

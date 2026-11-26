@@ -13,6 +13,13 @@ interface RequestOptions {
 }
 
 const DEFAULT_TIMEOUT_MS = 10_000;
+export const BASE_URL = API_BASE_URL.replace(/\/+$/, '');
+
+function serializeBody(body: unknown): BodyInit | undefined {
+    if (body === undefined) return undefined;
+    if (body instanceof FormData) return body;
+    return JSON.stringify(body);
+}
 
 export async function apiRequest<T>(
     path: string,
@@ -28,15 +35,16 @@ export async function apiRequest<T>(
     let response: Response;
 
     try {
-        response = await fetcher(`${API_BASE_URL}${path}`, {
+        response = await fetcher(`${BASE_URL}${path}`, {
             method,
             headers: {
                 Accept: 'application/json',
                 ...(token && { Authorization: `Bearer ${token}` }),
-                ...(body !== undefined && { 'Content-Type': 'application/json' }),
+                ...(body !== undefined &&
+                    !(body instanceof FormData) && { 'Content-Type': 'application/json' }),
                 ...headers
             },
-            body: body !== undefined ? JSON.stringify(body) : undefined,
+            body: serializeBody(body),
             signal: AbortSignal.timeout(timeoutMs)
         });
     } catch (error) {

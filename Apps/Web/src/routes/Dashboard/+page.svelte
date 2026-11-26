@@ -21,13 +21,13 @@
 
     <div>
       <div>
-        <a href="../">
+       
           <img
             src={logo}
             alt="Duel Domain Logo"
             class="xl:w-15 xl:h-15 w-10 h-10"
           />
-        </a>
+      
       </div>
 
       <div class="mt-5">
