@@ -13,6 +13,7 @@
   import DashBoardMobileNavBar from '$lib/components/DashBoardMobileNavBar.svelte';
   import DashBoardMobileNavItem from '$lib/components/ui/DashBoardMobileNavItem.svelte';
   import DashboardSideBarFooter from '$lib/components/DashboardSideBarFooter.svelte';
+  
 </script>
 
 <div class="px-5 flex flex-row">

@@ -1,18 +1,20 @@
 import { apiRequest } from '$lib/server/api/client';
-import type { PlayerProfile } from '../types';
+import { toUser } from '$lib/features/user/me/mapper';
+import type { PlayerProfileResponse, User } from '$lib/features/user/me/types';
 
 interface AuthenticatedContext {
     token: string;
     fetch: typeof fetch;
 }
 
-export function getMyProfile({ token, fetch }: AuthenticatedContext): Promise<PlayerProfile> {
-    return apiRequest<PlayerProfile>('/player/me/', { token, fetch });
-}
-
-export function getPlayerById(
+export async function getPlayerById(
     playerId: string,
     { token, fetch }: AuthenticatedContext
-): Promise<PlayerProfile> {
-    return apiRequest<PlayerProfile>(`/player/${encodeURIComponent(playerId)}/`, { token, fetch });
+): Promise<User> {
+    const profile = await apiRequest<PlayerProfileResponse>(
+        `/player/${encodeURIComponent(playerId)}/`,
+        { token, fetch }
+    );
+
+    return toUser(profile);
 }

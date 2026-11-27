@@ -1,4 +1,5 @@
 <script lang="ts">
+ import { user } from '$lib/features/user/me';
 
 </script>
 
@@ -11,7 +12,7 @@
 
           <span class="text-2xl font-bold mt-5">
             
-              Welcome Enigma
+              Welcome {user.username}
           </span>
 
            <p class="text-xs font-bold text-charcoal-white mt-2">EARNED</p>

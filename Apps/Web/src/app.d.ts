@@ -1,4 +1,4 @@
-import type { PlayerProfile } from '$lib/features/player/types';
+import type { User } from '$lib/features/user/me/types';
 
 declare global {
     namespace App {
@@ -7,7 +7,7 @@ declare global {
             adminToken: string | null;
         }
         interface PageData {
-            user?: PlayerProfile;
+            user?: User | null;
         }
     }
 }
