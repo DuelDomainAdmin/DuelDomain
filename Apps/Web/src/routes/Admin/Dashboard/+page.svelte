@@ -6,8 +6,9 @@
 
     async function signOut() {
         const response = await fetch(`${ROUTES.signOut}?scope=admin`, { method: 'POST' });
+        const result = response.ok ? await response.json().catch(() => null) : null;
 
-        if (!response.ok) {
+        if (result?.scope !== 'admin') {
             notify.error('Could not sign out. Please try again.');
             return;
         }
@@ -22,7 +23,7 @@
         <div class="flex items-center justify-between">
             <img src={DD} alt="Logo" class="w-10 h-10 mt-2" />
 
-            <button class="bg-red-400 p-2 rounded-md text-xs" onclick={signOut}>Sign-out</button>
+            <button class="bg-red-500 p-2 rounded-md text-xs" onclick={signOut}>Sign-out</button>
         </div>
 
         <div class="mt-5">
