@@ -15,6 +15,10 @@ export interface CreateGamePayload {
     match_modes: MatchModePayload[];
 }
 
+export interface UpdateGamePayload extends CreateGamePayload {
+    is_active: boolean;
+}
+
 export interface Game {
     id: string;
     name: string;

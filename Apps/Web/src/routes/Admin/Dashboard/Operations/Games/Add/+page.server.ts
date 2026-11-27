@@ -1,20 +1,12 @@
 import { fail, redirect } from '@sveltejs/kit';
 import type { Actions } from './$types';
 import { ROUTES } from '$lib/config/routes';
-import { mapApiFieldErrors } from '$lib/features/admin/operations/games/add/errors';
+import { mapApiFieldErrors } from '$lib/features/admin/operations/games/errors';
+import { readMatchModes } from '$lib/features/admin/operations/games/form';
 import { addGameSchema, type AddGameInput } from '$lib/features/admin/operations/games/add/schema';
 import { addGame } from '$lib/features/admin/operations/games/add/service.server';
 import { ApiError } from '$lib/server/api/errors';
 import { toFieldErrors } from '$lib/utils/form-errors';
-
-function readMatchModes(formData: FormData) {
-    const names = formData.getAll('matchModeName').map(String);
-    const descriptions = formData.getAll('matchModeDescription').map(String);
-
-    return names
-        .map((name, index) => ({ name, description: descriptions[index] ?? '' }))
-        .filter((mode) => mode.name.trim() || mode.description.trim());
-}
 
 export const actions: Actions = {
     default: async ({ request, fetch, locals }) => {
@@ -43,7 +35,7 @@ export const actions: Actions = {
         } catch (error) {
             if (error instanceof ApiError) {
                 return fail(error.status, {
-                    fieldErrors: mapApiFieldErrors(error.fieldErrors),
+                    fieldErrors: mapApiFieldErrors<AddGameInput>(error.fieldErrors),
                     message: error.message
                 });
             }
