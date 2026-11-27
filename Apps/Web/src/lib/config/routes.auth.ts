@@ -26,9 +26,5 @@ export function isProtectedPath(pathname: string): boolean {
 
 export function isAdminProtectedPath(pathname: string): boolean {
     const path = normalize(pathname);
-     return (
-       isWithin(path, ROUTES.admin) &&
-        !isWithin(path, ROUTES.adminSignIn) &&
-        !isWithin(path, ROUTES.adminSignOut)
-    );
+    return isWithin(path, ROUTES.admin) && !isWithin(path, ROUTES.adminSignIn);
 }
