@@ -28,7 +28,7 @@
                 
                 <div>
 
-                    <div class="rounded-full top-card--balance py-4 px-5">
+                    <div class=" py-4 px-5">
 
                         <div>
                             <p class="text-xl font-bold text-center">

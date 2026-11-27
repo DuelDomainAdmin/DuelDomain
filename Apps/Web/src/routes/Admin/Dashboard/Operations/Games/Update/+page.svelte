@@ -15,7 +15,7 @@
             {#each data.games as game (game.id)}
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-3">
-                        {#if game.bannerSrc}
+                        <!-- {#if game.bannerSrc}
                             <img
                                 src={game.bannerSrc}
                                 alt="{game.name} banner"
@@ -24,7 +24,7 @@
                             />
                         {:else}
                             <div class="w-10 h-10 rounded-md bg-dark-bg"></div>
-                        {/if}
+                        {/if} -->
                         <p class="">
                             {game.name}
                             <span class="text-gray">( {platformLabel(game.platform)} )</span>
