@@ -1,10 +1,33 @@
 <script lang="ts">
  import DD from '$lib/assets/DD.png';
+ import { goto } from "$app/navigation";
+ import { ROUTES } from "$lib/config/routes";
+import { notify } from "$lib/stores/notifyStore";
+
+async function signOut() {
+	const response = await fetch(ROUTES.signOut, { method: "POST" });
+
+	if (!response.ok) {
+		notify.error("Could not sign out. Please try again.");
+		return;
+	}
+
+	notify.success("Signed out.");
+	await goto(ROUTES.adminSignIn, { invalidateAll: true });
+}
 
 </script>
 
 <div class="xl:px-10 px-5">
-    <main><img src={DD} alt="Logo" class="w-10 h-10 mt-2"  />
+    <main>
+        
+       <div class="flex items-center justify-between">
+           <img src={DD} alt="Logo" class="w-10 h-10 mt-2"  />
+
+           <button class="btn-red p-2 rounded-md text-xs" on:click={signOut}>Sign-out</button>
+
+
+       </div>
         <div class="mt-5">
             <h1 class="text-center font-bold text-lg">Welcome Admin. You have all the Power !</h1>
         </div>
