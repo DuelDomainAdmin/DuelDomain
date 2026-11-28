@@ -13,6 +13,8 @@
   import DashBoardMobileNavBar from '$lib/components/DashBoardMobileNavBar.svelte';
   import DashBoardMobileNavItem from '$lib/components/ui/DashBoardMobileNavItem.svelte';
   import DashboardSideBarFooter from '$lib/components/DashboardSideBarFooter.svelte';
+  import { ROUTES } from '$lib/config/routes';
+  import { user } from '$lib/features/user/me';
   
 </script>
 
@@ -53,9 +55,23 @@
           <p class="font-bold text-xs">0 $DUEL</p>
         </div>
         <div>
-          <a href="Dashboard/Add-Duels" class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1" title="Add Duels">
-            <i class="fa-solid fa-plus"></i>
-          </a>
+                   {#if user.id}
+    <a
+        href={ROUTES.addDuels}
+        class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Add Duels"
+    >
+        <i class="fa-solid fa-plus"></i>
+    </a>
+{:else}
+    <a
+        href={ROUTES.signIn}
+        class="text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Sign In"
+    >
+        <i class="text-discord fa-solid fa-user"></i>
+    </a>
+{/if}
         </div>
       </div>
     </div>
@@ -82,9 +98,23 @@
           <p class="font-bold text-xs">0 $DUEL</p>
         </div>
         <div>
-           <a href="Dashboard/Add-Duels" class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1" title="Add Duels">
-            <i class="fa-solid fa-plus"></i>
-          </a>
+                       {#if user.id}
+    <a
+        href={ROUTES.addDuels}
+        class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Add Duels"
+    >
+        <i class="fa-solid fa-plus"></i>
+    </a>
+{:else}
+    <a
+        href={ROUTES.signIn}
+        class="text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Sign In"
+    >
+        <i class="text-discord fa-solid fa-user"></i>
+    </a>
+{/if}
         </div>
       </div>
 
@@ -120,11 +150,11 @@
         <div class="mt-2">
           <div class="flex flex-row items-center justify-between">
             <div class="flex flex-row items-center gap-1 text-xs">
-              <i class="fa-solid fa-gamepad text-primary"></i>
+              <i class="fa-solid fa-gamepad text-discord"></i>
               Games
             </div>
             <div>
-              <a class="text-xs text-primary" href="../">View All</a>
+              <a class="text-xs text-discord font-bold" href="../">View All</a>
             </div>
           </div>
 

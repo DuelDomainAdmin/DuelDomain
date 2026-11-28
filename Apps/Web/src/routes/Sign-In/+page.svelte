@@ -1,7 +1,7 @@
 <script lang="ts">
     import { enhance } from '$app/forms';
     import type { SubmitFunction } from '@sveltejs/kit';
-    import DD from '$lib/assets/DD.png';
+    import DD from '$lib/assets/logo.png';
     import { ROUTES } from '$lib/config/routes';
     import { notify } from '$lib/stores/notifyStore';
     type SignInForm = {
@@ -33,7 +33,7 @@
 
 <div class="xl:px-30 px-5 mt-10">
     <div class="flex justify-center">
-        <img src={DD} alt="Duel Domain Logo" class="w-10 h-10" />
+        <img src={DD} alt="Duel Domain Logo" class="w-15 h-15" />
     </div>
 
     <div class="md:px-30">

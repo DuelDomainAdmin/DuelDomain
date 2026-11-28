@@ -11,6 +11,8 @@
   import * as Select from "$lib/components/ui/select/index.js";
   import MatchCard from '$lib/components/ui/MatchCard.svelte';
   import DashboardSideBarFooter from '$lib/components/DashboardSideBarFooter.svelte';
+  import { ROUTES } from '$lib/config/routes';
+  import { user } from '$lib/features/user/me';
   
 
   const games = [
@@ -65,9 +67,23 @@
           <p class="font-bold text-xs">0 $DUEL</p>
         </div>
         <div>
-           <a href="Add-Duels" class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1" title="Add Duels">
-            <i class="fa-solid fa-plus"></i>
-          </a>
+                    {#if user.id}
+    <a
+        href={ROUTES.addDuels}
+        class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Add Duels"
+    >
+        <i class="fa-solid fa-plus"></i>
+    </a>
+{:else}
+    <a
+        href={ROUTES.signIn}
+        class="text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Sign In"
+    >
+        <i class="text-discord fa-solid fa-user"></i>
+    </a>
+{/if}
         </div>
       </div>
     </div>
@@ -94,9 +110,23 @@
           <p class="font-bold text-xs">0 $DUEL</p>
         </div>
         <div>
-            <a href="Add-Duels" class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1" title="Add Duels">
-            <i class="fa-solid fa-plus"></i>
-          </a>
+                   {#if user.id}
+    <a
+        href={ROUTES.addDuels}
+        class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Add Duels"
+    >
+        <i class="fa-solid fa-plus"></i>
+    </a>
+{:else}
+    <a
+        href={ROUTES.signIn}
+        class="text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Sign In"
+    >
+        <i class="text-discord fa-solid fa-user"></i>
+    </a>
+{/if}
         </div>
       </div>
 
@@ -146,13 +176,16 @@
 
         <div class="flex flex-row justify-between items-center mt-5">
 
-            <div>
+            <div class="flex flex-row gap-2 items-center">
 
-                <button title="Create Match" class="btn-primary_grd-one rounded-md text-xs px-4 py-2 flex flex-row items-center gap-2">
+                <div>
+                  <button title="Create Match" class="btn-primary_grd-one rounded-md text-xs px-4 py-2 flex flex-row items-center gap-2">
                     <i class="fa-solid fa-plus"></i>
                     Create Match
 
                 </button>
+                </div>
+                <div><a class="text-xs p-0 m-0" href="Matches/Waiting">In-Waiting<i class="fa-solid fa-clock p-0 m-0"></i> </a></div>
 
             </div>
 
@@ -164,7 +197,7 @@
   </Select.Trigger>
   <Select.Content class="match-game-select text-xs" portalProps={{}}>
     <Select.Group class="">
-      <Select.Label class="text-xs">Fruits</Select.Label>
+      <Select.Label class="text-xs">Games</Select.Label>
       {#each games as game (game.value)}
         <Select.Item
           value={game.value}
@@ -183,7 +216,7 @@
 
         </div>
 
-        <div class="mt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full mb-30 md:mb-0">
+        <div class="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 w-full mb-30 md:mb-0">
         <MatchCard link={'../'} image={dash_cod} player_one_name={'Enigma'} player_one_avatar={'https://api.dicebear.com/9.x/bottts/svg?seed=Avery'} player_two_name={'George'} player_two_avatar={'https://api.dicebear.com/9.x/adventurer/svg?seed=George'} reward={'500'} time={'03:22'}/>
         <MatchCard link={'../'} image={dash_football} player_one_name={'Enigma'} player_one_avatar={'https://api.dicebear.com/9.x/bottts/svg?seed=Avery'} player_two_name={'James'} player_two_avatar={'https://api.dicebear.com/9.x/adventurer/svg?seed=Jack'} reward={'500'} time={'03:22'}/>
         <MatchCard link={'../'} image={dash_mk} player_one_name={'Enigma'} player_one_avatar={'https://api.dicebear.com/9.x/bottts/svg?seed=Avery'} player_two_name={'James'} player_two_avatar={'https://api.dicebear.com/9.x/bottts/svg?seed=Avery'} reward={'500'} time={'03:22'}/>

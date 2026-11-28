@@ -3,6 +3,7 @@ import { goto } from "$app/navigation";
 import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
 import { ROUTES } from "$lib/config/routes";
 import { notify } from "$lib/stores/notifyStore";
+import { user } from '$lib/features/user/me';
 
 async function signOut() {
 	const response = await fetch(ROUTES.signOut, { method: "POST" });
@@ -15,6 +16,9 @@ async function signOut() {
 	notify.success("Signed out.");
 	await goto(ROUTES.signIn, { invalidateAll: true });
 }
+
+
+
 </script>
 
  <DropdownMenu.Root>
@@ -64,10 +68,23 @@ async function signOut() {
 		</DropdownMenu.Group>
 		<DropdownMenu.Separator class="" />
 		<DropdownMenu.Group>
-			<DropdownMenu.Item inset={false} class="" onSelect={signOut}>
+			     {#if user.id}
+        <DropdownMenu.Item inset={false} class="" onSelect={signOut}>
 				Log out
 				<DropdownMenu.Shortcut class=""><i class="fa-solid fa-arrow-right-from-bracket"></i></DropdownMenu.Shortcut>
 			</DropdownMenu.Item>
+{:else}
+       <DropdownMenu.Item inset={false} class="" >
+				  Log out
+				<DropdownMenu.Shortcut class=""><i class="fa-solid fa-arrow-right-from-bracket"></i></DropdownMenu.Shortcut>
+			</DropdownMenu.Item>
+{/if}
 		</DropdownMenu.Group>
 	</DropdownMenu.Content>
 </DropdownMenu.Root>
+
+
+
+
+
+ 

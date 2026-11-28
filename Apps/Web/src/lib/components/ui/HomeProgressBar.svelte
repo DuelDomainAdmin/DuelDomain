@@ -11,7 +11,7 @@
       if (progress >= 100) {
         clearInterval(interval);
         setTimeout(() => {
-          goto('/Home');
+          goto('/Dashboard');
         }, 300);
       }
     }, 20);
@@ -29,6 +29,6 @@
 
 <style lang="scss">
   .progress-gradient {
-    background: linear-gradient(to right, #0D95FF 0%, #8651AC 50%, #FF0D5A 100%);
+    background: linear-gradient(to right, $color-primary 0%, $color-mid 50%, $color-secondary 100%);
   }
 </style>

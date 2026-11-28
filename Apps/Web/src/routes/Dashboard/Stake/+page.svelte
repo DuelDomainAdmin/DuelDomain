@@ -21,7 +21,8 @@
   let selectedMode: string = '1v1';
   let showModal = false;
   let matchSummary: Record<string, string> | null = null;
-
+  import { ROUTES } from '$lib/config/routes';
+  import { user } from '$lib/features/user/me';
 
   const prices = [
     { duel: '100',  price: '1.0'  },
@@ -81,7 +82,7 @@
   }
 
   const selectable = 'cursor-pointer transition-all duration-150 rounded-md';
-   const ring ='p-[2px] rounded-xl bg-gradient-to-r from-[#0D95FF] via-[#8651AC] to-[#FB00CD]';
+   const ring ='p-[2px] rounded-xl bg-gradient-to-r from-[#0D95FF] via-[#032b4a] to-[#09e4f4]';
 </script>
 
 <div class="px-5 flex flex-row">
@@ -110,9 +111,23 @@
       </div>
       <div class="flex flex-row items-center gap-2">
         <p class="font-bold text-xs">0 $DUEL</p>
-        <a href="Add-Duels" aria-label="Add Duels" class="btn-secondary rounded-full text-xs px-2 py-2 flex items-center gap-1">
-          <i class="fa-solid fa-plus"></i>
-        </a>
+              {#if user.id}
+    <a
+        href={ROUTES.addDuels}
+        class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Add Duels"
+    >
+        <i class="fa-solid fa-plus"></i>
+    </a>
+{:else}
+    <a
+        href={ROUTES.signIn}
+        class="text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Sign In"
+    >
+        <i class="text-discord fa-solid fa-user"></i>
+    </a>
+{/if}
       </div>
     </div>
 
@@ -124,9 +139,23 @@
         </a>
         <div class="flex flex-row items-center gap-2">
           <p class="font-bold text-xs">0 $DUEL</p>
-          <a href="Add-Duels" aria-label="Add Duels" class="btn-secondary rounded-full text-xs px-2 py-2 flex items-center gap-1">
-            <i class="fa-solid fa-plus"></i>
-          </a>
+                   {#if user.id}
+    <a
+        href={ROUTES.addDuels}
+        class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Add Duels"
+    >
+        <i class="fa-solid fa-plus"></i>
+    </a>
+{:else}
+    <a
+        href={ROUTES.signIn}
+        class="text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Sign In"
+    >
+        <i class="text-discord fa-solid fa-user"></i>
+    </a>
+{/if}
         </div>
       </div>
       <div class="dashboard_search flex items-center gap-2 px-4 py-2 mt-1 w-full">
@@ -223,7 +252,7 @@
               <p class="font-bold">SELECT GAME</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-4 w-full">
               {#each games as g}
                 <div
                   role="button"

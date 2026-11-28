@@ -16,7 +16,11 @@
           </span>
 
            <p class="text-xs font-bold text-charcoal-white mt-2">EARNED</p>
-                   <p class="text-lg font-bold">2000 <span class="text-xs text-charcoal-white">$DUEL</span></p>
+           <div class="flex items-center gap-1">
+              <p class="text-lg font-bold"> 0 </p>
+             <span class="text-xs text-charcoal-white">$DUEL</span>
+           </div>
+                   
 
                    <div class="flex flex-row gap-4 items-center mt-2">
 

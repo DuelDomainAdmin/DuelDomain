@@ -27,13 +27,12 @@ export {};
 
 declare module "$app/types" {
 	export interface AppTypes {
-		RouteId(): "/" | "/About" | "/Admin" | "/Admin/Dashboard" | "/Admin/Dashboard/Operations" | "/Admin/Dashboard/Operations/Games" | "/Admin/Dashboard/Operations/Games/Add" | "/Admin/Dashboard/Operations/Games/Delete" | "/Admin/Dashboard/Operations/Games/Update" | "/Admin/Dashboard/Operations/Games/Update/Game" | "/Admin/Dashboard/Operations/Games/Update/Game/[gameId]" | "/Admin/Sign-In" | "/Admin/Sign-out" | "/Blank" | "/Challenges" | "/Change-Password" | "/Community" | "/Contact" | "/Dashboard" | "/Dashboard/Add-Duels" | "/Dashboard/Games" | "/Dashboard/Matches" | "/Dashboard/Stake" | "/Forgot-Password" | "/Forgot-Password/Verify" | "/Games" | "/Home" | "/Rankings" | "/Rewards" | "/Select-Avatar" | "/Sign-In" | "/Sign-Out" | "/Sign-Up" | "/Sign-Up/Verify" | "/Tournaments" | "/Welcome";
+		RouteId(): "/" | "/Admin" | "/Admin/Dashboard" | "/Admin/Dashboard/Operations" | "/Admin/Dashboard/Operations/Games" | "/Admin/Dashboard/Operations/Games/Add" | "/Admin/Dashboard/Operations/Games/Delete" | "/Admin/Dashboard/Operations/Games/Update" | "/Admin/Dashboard/Operations/Games/Update/Game" | "/Admin/Dashboard/Operations/Games/Update/Game/[gameId]" | "/Admin/Sign-In" | "/Admin/Sign-out" | "/Blank" | "/Change-Password" | "/Dashboard" | "/Dashboard/Add-Duels" | "/Dashboard/Games" | "/Dashboard/Matches" | "/Dashboard/Stake" | "/Forgot-Password" | "/Forgot-Password/Verify" | "/Select-Avatar" | "/Sign-In" | "/Sign-Out" | "/Sign-Up" | "/Sign-Up/Verify";
 		RouteParams(): {
 			"/Admin/Dashboard/Operations/Games/Update/Game/[gameId]": { gameId: string }
 		};
 		LayoutParams(): {
 			"/": { gameId?: string };
-			"/About": Record<string, never>;
 			"/Admin": { gameId?: string };
 			"/Admin/Dashboard": { gameId?: string };
 			"/Admin/Dashboard/Operations": { gameId?: string };
@@ -46,10 +45,7 @@ declare module "$app/types" {
 			"/Admin/Sign-In": Record<string, never>;
 			"/Admin/Sign-out": Record<string, never>;
 			"/Blank": Record<string, never>;
-			"/Challenges": Record<string, never>;
 			"/Change-Password": Record<string, never>;
-			"/Community": Record<string, never>;
-			"/Contact": Record<string, never>;
 			"/Dashboard": Record<string, never>;
 			"/Dashboard/Add-Duels": Record<string, never>;
 			"/Dashboard/Games": Record<string, never>;
@@ -57,19 +53,13 @@ declare module "$app/types" {
 			"/Dashboard/Stake": Record<string, never>;
 			"/Forgot-Password": Record<string, never>;
 			"/Forgot-Password/Verify": Record<string, never>;
-			"/Games": Record<string, never>;
-			"/Home": Record<string, never>;
-			"/Rankings": Record<string, never>;
-			"/Rewards": Record<string, never>;
 			"/Select-Avatar": Record<string, never>;
 			"/Sign-In": Record<string, never>;
 			"/Sign-Out": Record<string, never>;
 			"/Sign-Up": Record<string, never>;
-			"/Sign-Up/Verify": Record<string, never>;
-			"/Tournaments": Record<string, never>;
-			"/Welcome": Record<string, never>
+			"/Sign-Up/Verify": Record<string, never>
 		};
-		Pathname(): "/" | "/About" | "/About/" | "/Admin" | "/Admin/" | "/Admin/Dashboard" | "/Admin/Dashboard/" | "/Admin/Dashboard/Operations" | "/Admin/Dashboard/Operations/" | "/Admin/Dashboard/Operations/Games" | "/Admin/Dashboard/Operations/Games/" | "/Admin/Dashboard/Operations/Games/Add" | "/Admin/Dashboard/Operations/Games/Add/" | "/Admin/Dashboard/Operations/Games/Delete" | "/Admin/Dashboard/Operations/Games/Delete/" | "/Admin/Dashboard/Operations/Games/Update" | "/Admin/Dashboard/Operations/Games/Update/" | "/Admin/Dashboard/Operations/Games/Update/Game" | "/Admin/Dashboard/Operations/Games/Update/Game/" | `/Admin/Dashboard/Operations/Games/Update/Game/${string}` & {} | `/Admin/Dashboard/Operations/Games/Update/Game/${string}/` & {} | "/Admin/Sign-In" | "/Admin/Sign-In/" | "/Admin/Sign-out" | "/Admin/Sign-out/" | "/Blank" | "/Blank/" | "/Challenges" | "/Challenges/" | "/Change-Password" | "/Change-Password/" | "/Community" | "/Community/" | "/Contact" | "/Contact/" | "/Dashboard" | "/Dashboard/" | "/Dashboard/Add-Duels" | "/Dashboard/Add-Duels/" | "/Dashboard/Games" | "/Dashboard/Games/" | "/Dashboard/Matches" | "/Dashboard/Matches/" | "/Dashboard/Stake" | "/Dashboard/Stake/" | "/Forgot-Password" | "/Forgot-Password/" | "/Forgot-Password/Verify" | "/Forgot-Password/Verify/" | "/Games" | "/Games/" | "/Home" | "/Home/" | "/Rankings" | "/Rankings/" | "/Rewards" | "/Rewards/" | "/Select-Avatar" | "/Select-Avatar/" | "/Sign-In" | "/Sign-In/" | "/Sign-Out" | "/Sign-Out/" | "/Sign-Up" | "/Sign-Up/" | "/Sign-Up/Verify" | "/Sign-Up/Verify/" | "/Tournaments" | "/Tournaments/" | "/Welcome" | "/Welcome/";
+		Pathname(): "/" | "/Admin" | "/Admin/" | "/Admin/Dashboard" | "/Admin/Dashboard/" | "/Admin/Dashboard/Operations" | "/Admin/Dashboard/Operations/" | "/Admin/Dashboard/Operations/Games" | "/Admin/Dashboard/Operations/Games/" | "/Admin/Dashboard/Operations/Games/Add" | "/Admin/Dashboard/Operations/Games/Add/" | "/Admin/Dashboard/Operations/Games/Delete" | "/Admin/Dashboard/Operations/Games/Delete/" | "/Admin/Dashboard/Operations/Games/Update" | "/Admin/Dashboard/Operations/Games/Update/" | "/Admin/Dashboard/Operations/Games/Update/Game" | "/Admin/Dashboard/Operations/Games/Update/Game/" | `/Admin/Dashboard/Operations/Games/Update/Game/${string}` & {} | `/Admin/Dashboard/Operations/Games/Update/Game/${string}/` & {} | "/Admin/Sign-In" | "/Admin/Sign-In/" | "/Admin/Sign-out" | "/Admin/Sign-out/" | "/Blank" | "/Blank/" | "/Change-Password" | "/Change-Password/" | "/Dashboard" | "/Dashboard/" | "/Dashboard/Add-Duels" | "/Dashboard/Add-Duels/" | "/Dashboard/Games" | "/Dashboard/Games/" | "/Dashboard/Matches" | "/Dashboard/Matches/" | "/Dashboard/Stake" | "/Dashboard/Stake/" | "/Forgot-Password" | "/Forgot-Password/" | "/Forgot-Password/Verify" | "/Forgot-Password/Verify/" | "/Select-Avatar" | "/Select-Avatar/" | "/Sign-In" | "/Sign-In/" | "/Sign-Out" | "/Sign-Out/" | "/Sign-Up" | "/Sign-Up/" | "/Sign-Up/Verify" | "/Sign-Up/Verify/";
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
 		Asset(): "/robots.txt" | string & {};
 	}

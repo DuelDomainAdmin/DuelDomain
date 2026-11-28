@@ -1,6 +1,11 @@
 import { ROUTES } from './routes';
 
-export const PROTECTED_ROUTES: string[] = [ROUTES.dashboard, ROUTES.selectAvatar];
+export const PROTECTED_ROUTES: string[] = [
+    ROUTES.selectAvatar,
+    ROUTES.addDuels,
+    ROUTES.stake,
+    ROUTES.matches
+];
 
 function normalize(pathname: string): string {
     let path = pathname;

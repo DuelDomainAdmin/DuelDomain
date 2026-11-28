@@ -11,18 +11,28 @@
    export let reward :string;
 </script>
 
+<div>
+
+  
+ <div class="text-xs text-discord mb-2">
+             <i class="fa-solid fa-burst"></i>
+             Live.{time}
+  </div>
+
 <div class="p-2 match-card rounded-md"  style="background-image: url('{image}');">
 
           <div class="mt-2 flex flex-row items-center justify-between">
-
+<!-- 
             <div class="bg-white/10 backdrop-blur-md rounded-full px-3 py-1 text-xs text-green flex flex-row items-center gap-1">
              <i class="fa-solid fa-burst"></i>
              Live.{time}
-          </div>
+          </div> -->
 
           <div>
 
-            <div class="bg_grd_one rounded-md text-xs px-3 py-1">
+
+
+            <div class="text-white bg-white/10 backdrop-blur-md  rounded-full text-xs px-3 py-1">
 
                 ${reward}Duel
 
@@ -51,11 +61,12 @@
             </div>
 
             <div>
-                <a class="bg-white text-black text-xs rounded-md px-3 py-1 flex flex-row items-center gap-1" href="{link}"><i class="fa-solid fa-eye text-xs"></i> Spectate</a>
+                <!-- <a class="bg-white text-black text-xs rounded-md px-3 py-1 flex flex-row items-center gap-1" href="{link}"><i class="fa-solid fa-eye text-xs"></i> Spectate</a> -->
             </div>
 
           </div>
 
 
+</div>
 </div>
 

@@ -10,6 +10,8 @@
   import dash_ff from "$lib/assets/dash_ff.jpg";
   import dash_mk from "$lib/assets/dash_mk.jpg";
   import DashboardSideBarFooter from '$lib/components/DashboardSideBarFooter.svelte';
+  import { ROUTES } from '$lib/config/routes';
+  import { user } from '$lib/features/user/me';
   
 </script>
 
@@ -50,9 +52,23 @@
           <p class="font-bold text-xs">0 $DUEL</p>
         </div>
         <div>
-           <a href="Add-Duels" class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1" title="Add Duels">
-            <i class="fa-solid fa-plus"></i>
-          </a>
+                     {#if user.id}
+    <a
+        href={ROUTES.addDuels}
+        class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Add Duels"
+    >
+        <i class="fa-solid fa-plus"></i>
+    </a>
+{:else}
+    <a
+        href={ROUTES.signIn}
+        class="text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Sign In"
+    >
+        <i class="text-discord fa-solid fa-user"></i>
+    </a>
+{/if}
         </div>
       </div>
     </div>
@@ -79,9 +95,23 @@
           <p class="font-bold text-xs">0 $DUEL</p>
         </div>
         <div>
-           <a href="Add-Duels" class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1" title="Add Duels">
-            <i class="fa-solid fa-plus"></i>
-          </a>
+                 {#if user.id}
+    <a
+        href={ROUTES.addDuels}
+        class="btn-secondary rounded-full text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Add Duels"
+    >
+        <i class="fa-solid fa-plus"></i>
+    </a>
+{:else}
+    <a
+        href={ROUTES.signIn}
+        class="text-xs px-2 py-2 flex flex-row items-center gap-1"
+        title="Sign In"
+    >
+        <i class="text-discord fa-solid fa-user"></i>
+    </a>
+{/if}
         </div>
       </div>
 
@@ -129,7 +159,7 @@
 
         </div>
 
-        <div class="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+        <div class="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 w-full">
 
             <PlatformGameCard link={'../'} image={dash_cod} platform={'fa-solid fa-mobile'} duel_count={'200'} category={'mmorpg'} tag_color={'text-purple'} title={'Call of Duty Mobile'}/>
               <PlatformGameCard link={'../'} image={dash_football} platform={'fa-solid fa-mobile'} duel_count={'196'} category={'mmo'} tag_color={'text-green'} title={'Efootball'}/>

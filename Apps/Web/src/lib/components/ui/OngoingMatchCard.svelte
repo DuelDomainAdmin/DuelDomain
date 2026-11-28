@@ -17,7 +17,7 @@
   <div class="w-full">
 
     <div class="w-full">
-          <div class="bg-white/10 backdrop-blur-md mt-1 rounded-md py-5 px-2">
+          <div class=" mt-1 rounded-md py-5 px-2">
             <div class="flex flex-row justify-between items-center">
               <div class="flex flex-col justify-center items-center">
                 <p class="text-xs text-secondary">#{match_id}</p>
@@ -37,7 +37,7 @@
         </div>
 
          <div class="flex">
-          <a href="{match_link}" class="btn-primary rounded-md px-2 py-1 texts-xs w-full mt-1 text-center">Spectate</a>
+          <a href="{match_link}" class="bg-white/10 backdrop-blur-md text-secondary rounded-sm px-2 py-2 text-xs w-full mt-1 text-center">Spectate</a>
         </div>
   </div>
  

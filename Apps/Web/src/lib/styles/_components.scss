@@ -498,8 +498,8 @@
 
   .match-game-select{
 
-      border: 10px solid transparent;
-  border-image: url('../assets/upcoming_tournament_border.png') 30;
+      border: 1px solid $color-discord ;
+  // border-image: url('../assets/upcoming_tournament_border.png') 30;
     background-color: $color-black;
     color: white;
     outline: none;

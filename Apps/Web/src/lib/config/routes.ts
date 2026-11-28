@@ -1,9 +1,9 @@
 export const ROUTES = {
-    home: '/',
+    dashboard: '/',
     signUp: '/Sign-Up',
     signIn: '/Sign-In',
     verifyaccount:'/Sign-Up/Verify',
-    dashboard: '/Dashboard',
+    // dashboard: '/Dashboard',
     selectAvatar: '/Select-Avatar',
     forgotPassword: '/Forgot-Password',
     forgotPasswordVerify: '/Forgot-Password/Verify',
@@ -16,4 +16,7 @@ export const ROUTES = {
     adminDeleteGame: '/Admin/Dashboard/Operations/Games/Delete',
     adminUpdateGames: '/Admin/Dashboard/Operations/Games/Update',
     adminUpdateGame: '/Admin/Dashboard/Operations/Games/Update/Game',
+    addDuels: '/Dashboard/Add-Duels',
+    stake: '/Dashboard/Stake',
+    matches: '/Dashboard/Matches',
 } as const;
